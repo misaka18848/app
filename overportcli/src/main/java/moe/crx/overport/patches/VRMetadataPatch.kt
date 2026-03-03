@@ -93,9 +93,8 @@ val PATCH_VR_METADATA = Patch("patch_vr_metadata") {
         takeNodesEach({ named("manifest") }) {
             takeNodes {
                 this?.put(createUsesFeature("android.software.xr.api.openxr", true))
-                this?.put(createUsesFeature("android.software.xr.api.spatial", true))
-                this?.put(createUsesLibrary("libopenxr.google.so", false))
-                this?.put(createUsesFeature("android.software.xr.input.controller", false))
+                    ?.put(createUsesFeature("android.software.xr.api.spatial", true))
+                    ?.put(createUsesFeature("android.software.xr.input.controller", false))
                     ?.put(createUsesPermission("org.khronos.openxr.permission.OPENXR"))
                     ?.put(createUsesPermission("org.khronos.openxr.permission.OPENXR_SYSTEM"))
                     ?.put(createUsesPermission("com.huawei.android.permission.VR"))
@@ -131,6 +130,7 @@ val PATCH_VR_METADATA = Patch("patch_vr_metadata") {
                         ?.put(createMetadata("com.htc.vr.content.NumController", "1,2"))
                         ?.put(createMetadata("com.htc.vr.content.NumDoFController", "3,6DoF"))
                         ?.put(createMetadata("com.htc.vr.content.NumDoFHmd", "3,6DoF"))
+                        ?.put(createUsesLibrary("libopenxr.google.so", false))
                 }
             }
         }
